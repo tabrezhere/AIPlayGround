@@ -1,15 +1,13 @@
 name: Build and Deploy
-
 on:
   push:
     branches:
       - main
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
@@ -19,7 +17,9 @@ jobs:
         run: dotnet restore
       - name: Build
         run: dotnet build --configuration Release
+      - name: Run tests
+        run: dotnet test
       - name: Publish
         run: dotnet publish --configuration Release --output ./publish
       - name: Deploy
-        run: echo 'Deploying...'
+        run: echo "Deploying..."
