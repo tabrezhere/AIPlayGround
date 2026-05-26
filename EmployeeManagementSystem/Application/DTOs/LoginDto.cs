@@ -1,0 +1,7 @@
+namespace EmployeeManagementSystem.Application.DTOs;
+
+public record LoginDto
+{
+    public string Email { get; init; }
+    public string Password { get; init; }
+}
