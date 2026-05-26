@@ -1,0 +1,20 @@
+version: '3.4'
+services:
+  employee_management_system:
+    image: employee_management_system
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=db;Database=EmployeeManagement;User Id=sa;Password=Your_password123;
+      - Jwt__Key=YourSuperSecretKey
+      - Jwt__Issuer=EmployeeManagementSystem
+  db:
+    image: mcr.microsoft.com/mssql/server
+    environment:
+      - SA_PASSWORD=Your_password123
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
