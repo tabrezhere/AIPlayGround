@@ -1,13 +1,11 @@
-using EmployeeManagementSystem.Application.Interfaces;
-using EmployeeManagementSystem.Application.DTOs;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Text;
 using Microsoft.IdentityModel.Tokens;
+using EmployeeManagementSystem.Application.DTOs;
 
 namespace EmployeeManagementSystem.Application.Services;
 
-public class AuthService : IAuthService
+public class AuthService
 {
     private readonly IConfiguration _configuration;
 
@@ -16,27 +14,23 @@ public class AuthService : IAuthService
         _configuration = configuration;
     }
 
-    public async Task<string> LoginAsync(LoginDto loginDto)
+    public async Task RegisterAsync(UserDto userDto)
     {
-        // Validate user credentials (mocked for this example)
-        if (loginDto.Email == "test@example.com" && loginDto.Password == "password")
-        {
-            var claims = new[] { new Claim(ClaimTypes.Name, loginDto.Email) };
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            var token = new JwtSecurityToken(
-                issuer: _configuration["Jwt:Issuer"],
-                audience: _configuration["Jwt:Audience"],
-                claims: claims,
-                expires: DateTime.Now.AddMinutes(30),
-                signingCredentials: creds);
-            return new JwtSecurityTokenHandler().WriteToken(token);
-        }
-        return null;
+        // Implement user registration logic here
     }
 
-    public async Task RegisterAsync(RegisterDto registerDto)
+    public async Task<string> LoginAsync(LoginDto loginDto)
     {
-        // Registration logic (mocked for this example)
+        // Validate user credentials and generate JWT token
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]);
+        var tokenDescriptor = new SecurityTokenDescriptor
+        {
+            Subject = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Name, loginDto.Username) }),
+            Expires = DateTime.UtcNow.AddHours(1),
+            SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+        };
+        var token = tokenHandler.CreateToken(tokenDescriptor);
+        return tokenHandler.WriteToken(token);
     }
 }
