@@ -7,9 +7,9 @@ public class EmployeeDtoValidator : AbstractValidator<EmployeeDto>
 {
     public EmployeeDtoValidator()
     {
-        RuleFor(e => e.FirstName).NotEmpty();
-        RuleFor(e => e.LastName).NotEmpty();
-        RuleFor(e => e.Email).EmailAddress();
-        RuleFor(e => e.Role).NotEmpty();
+        RuleFor(x => x.FirstName).NotEmpty();
+        RuleFor(x => x.LastName).NotEmpty();
+        RuleFor(x => x.Email).EmailAddress();
+        RuleFor(x => x.Role).NotEmpty();
     }
 }
