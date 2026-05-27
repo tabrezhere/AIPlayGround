@@ -1,7 +1,7 @@
 version: '3.4'
 services:
-  employee_management_system:
-    image: employee_management_system
+  employee_management:
+    image: employee_management
     build:
       context: .
       dockerfile: Dockerfile
