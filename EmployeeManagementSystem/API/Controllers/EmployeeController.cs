@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using EmployeeManagementSystem.Application.Interfaces;
+using EmployeeManagementSystem.Application.Services;
 using EmployeeManagementSystem.Application.DTOs;
+using System.Threading.Tasks;
 
 namespace EmployeeManagementSystem.API.Controllers;
 
@@ -8,11 +9,18 @@ namespace EmployeeManagementSystem.API.Controllers;
 [Route("api/[controller]")]
 public class EmployeeController : ControllerBase
 {
-    private readonly IEmployeeService _employeeService;
+    private readonly EmployeeService _employeeService;
 
-    public EmployeeController(IEmployeeService employeeService)
+    public EmployeeController(EmployeeService employeeService)
     {
         _employeeService = employeeService;
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(int id)
+    {
+        var employee = await _employeeService.GetByIdAsync(id);
+        return Ok(employee);
     }
 
     [HttpGet]
@@ -22,22 +30,15 @@ public class EmployeeController : ControllerBase
         return Ok(employees);
     }
 
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetById(int id)
-    {
-        var employee = await _employeeService.GetByIdAsync(id);
-        return employee is not null ? Ok(employee) : NotFound();
-    }
-
     [HttpPost]
-    public async Task<IActionResult> Create(EmployeeDto employeeDto)
+    public async Task<IActionResult> Create([FromBody] EmployeeDto employeeDto)
     {
         await _employeeService.AddAsync(employeeDto);
         return CreatedAtAction(nameof(GetById), new { id = employeeDto.Id }, employeeDto);
     }
 
     [HttpPut]
-    public async Task<IActionResult> Update(EmployeeDto employeeDto)
+    public async Task<IActionResult> Update([FromBody] EmployeeDto employeeDto)
     {
         await _employeeService.UpdateAsync(employeeDto);
         return NoContent();
