@@ -1,7 +1,5 @@
 using EmployeeManagementSystem.Domain.Interfaces;
 using EmployeeManagementSystem.Application.DTOs;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace EmployeeManagementSystem.Application.Services;
 
@@ -17,7 +15,7 @@ public class EmployeeService
     public async Task<EmployeeDto> GetByIdAsync(int id)
     {
         var employee = await _employeeRepository.GetByIdAsync(id);
-        return new EmployeeDto { Id = employee.Id, FirstName = employee.FirstName, LastName = employee.LastName, Email = employee.Email, Role = employee.Role };
+        return employee is null ? null : new EmployeeDto { Id = employee.Id, FirstName = employee.FirstName, LastName = employee.LastName, Email = employee.Email, Role = employee.Role };
     }
 
     public async Task<IEnumerable<EmployeeDto>> GetAllAsync()
