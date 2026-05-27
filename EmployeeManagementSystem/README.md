@@ -1,7 +1,7 @@
 # Employee Management System
 
 ## Overview
-This is an Employee Management System built with .NET 9 Web API and Blazor Server, utilizing a SQL Server database and JWT for authentication.
+A simple employee management system with CRUD operations and JWT authentication.
 
 ## Prerequisites
 - .NET 9 SDK
@@ -22,13 +22,12 @@ This is an Employee Management System built with .NET 9 Web API and Blazor Serve
 - `Jwt__Audience`
 
 ## API Endpoints
-- `GET /api/employee`
-- `GET /api/employee/{id}`
-- `POST /api/employee`
-- `PUT /api/employee`
-- `DELETE /api/employee/{id}`
-- `POST /api/auth/login`
-- `POST /api/auth/register`
+- `GET /api/employee/{id}` - Get employee by ID
+- `GET /api/employee` - Get all employees
+- `POST /api/employee` - Create a new employee
+- `PUT /api/employee` - Update an existing employee
+- `DELETE /api/employee/{id}` - Delete an employee
+- `POST /api/auth/login` - Authenticate user
 
 ## Architecture Overview
-The application follows Clean Architecture principles, separating concerns into Domain, Application, Infrastructure, and API layers.
+The application follows Clean Architecture principles with four layers: Domain, Application, Infrastructure, and API.
