@@ -1,10 +1,11 @@
-using EmployeeManagementSystem.Application.Interfaces;
-using EmployeeManagementSystem.Application.DTOs;
 using EmployeeManagementSystem.Domain.Interfaces;
+using EmployeeManagementSystem.Application.DTOs;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace EmployeeManagementSystem.Application.Services;
 
-public class EmployeeService : IEmployeeService
+public class EmployeeService
 {
     private readonly IEmployeeRepository _employeeRepository;
 
