@@ -1,14 +1,14 @@
-using EmployeeManagementSystem.Domain.Entities;
 using EmployeeManagementSystem.Domain.Interfaces;
+using EmployeeManagementSystem.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeManagementSystem.Infrastructure.Repositories;
 
 public class EmployeeRepository : IEmployeeRepository
 {
-    private readonly EmployeeDbContext _context;
+    private readonly AppDbContext _context;
 
-    public EmployeeRepository(EmployeeDbContext context)
+    public EmployeeRepository(AppDbContext context)
     {
         _context = context;
     }
