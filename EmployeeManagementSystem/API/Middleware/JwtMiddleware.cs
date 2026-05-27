@@ -4,7 +4,6 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace EmployeeManagementSystem.API.Middleware;
 
@@ -19,22 +18,37 @@ public class JwtMiddleware
 
     public async Task Invoke(HttpContext context)
     {
-        var token = context.Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
-        if (!string.IsNullOrEmpty(token))
+        var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+
+        if (token != null)
+        {
+            await AttachUserToContext(context, token);
+        }
+
+        await _next(context);
+    }
+
+    private async Task AttachUserToContext(HttpContext context, string token)
+    {
+        try
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.UTF8.GetBytes(context.RequestServices.GetRequiredService<IConfiguration>()["Jwt:Key"]);
+            var key = Encoding.ASCII.GetBytes(context.RequestServices.GetRequiredService<IConfiguration>()["Jwt:Key"]);
             tokenHandler.ValidateToken(token, new TokenValidationParameters
             {
                 ValidateIssuerSigningKey = true,
                 IssuerSigningKey = new SymmetricSecurityKey(key),
                 ValidateIssuer = false,
                 ValidateAudience = false
-            }, out SecurityToken validatedToken);
+            }, out var validatedToken);
+
             var jwtToken = (JwtSecurityToken)validatedToken;
-            var userEmail = jwtToken.Claims.First(x => x.Type == ClaimTypes.Name).Value;
-            context.Items["User"] = userEmail;
+            var userId = int.Parse(jwtToken.Claims.First(x => x.Type == ClaimTypes.Name).Value);
+            context.Items["User"] = userId;
         }
-        await _next(context);
+        catch
+        {
+            // Do nothing if JWT validation fails
+        }
     }
 }
