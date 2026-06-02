@@ -1,50 +1,24 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
+using EmployeeManagementSystem.Application.Services;
+using EmployeeManagementSystem.Application.DTOs;
+
+namespace EmployeeManagementSystem.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
 public class AuthController : ControllerBase
 {
-    private readonly IConfiguration _configuration;
+    private readonly IJwtTokenService _jwtTokenService;
 
-    public AuthController(IConfiguration configuration)
+    public AuthController(IJwtTokenService jwtTokenService)
     {
-        _configuration = configuration;
+        _jwtTokenService = jwtTokenService;
     }
 
     [HttpPost("login")]
-    public IActionResult Login([FromBody] LoginDto loginDto)
+    public IActionResult Login([FromBody] EmployeeDto employeeDto)
     {
-        // Validate user credentials (this should be done against a database)
-        if (loginDto.Username == "admin" && loginDto.Password == "password")
-        {
-            var token = GenerateJwtToken(loginDto.Username);
-            return Ok(new { Token = token });
-        }
-        return Unauthorized();
-    }
-
-    private string GenerateJwtToken(string username)
-    {
-        var claims = new[]
-        {
-            new Claim(JwtRegisteredClaimNames.Sub, username),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-        };
-
-        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
-        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-        var token = new JwtSecurityToken(
-            issuer: _configuration["Jwt:Issuer"],
-            audience: _configuration["Jwt:Audience"],
-            claims: claims,
-            expires: DateTime.Now.AddMinutes(30),
-            signingCredentials: creds);
-
-        return new JwtSecurityTokenHandler().WriteToken(token);
+        // Logic for login
+        return Ok();
     }
 }
