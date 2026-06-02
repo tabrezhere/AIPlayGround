@@ -5,10 +5,7 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 COPY [YOUR_PROJECT_NAME].sln .
-COPY src/EmployeeManagementSystem.API/*.csproj src/EmployeeManagementSystem.API/
-COPY src/EmployeeManagementSystem.Application/*.csproj src/EmployeeManagementSystem.Application/
-COPY src/EmployeeManagementSystem.Domain/*.csproj src/EmployeeManagementSystem.Domain/
-COPY src/EmployeeManagementSystem.Infrastructure/*.csproj src/EmployeeManagementSystem.Infrastructure/
+COPY src/*/*.csproj ./src/
 RUN dotnet restore
 COPY . .
 WORKDIR /src/src/EmployeeManagementSystem.API
