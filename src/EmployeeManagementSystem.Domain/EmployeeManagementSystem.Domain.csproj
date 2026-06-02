@@ -1,12 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>EmployeeManagementSystem.Domain</RootNamespace>
-    <AssemblyName>EmployeeManagementSystem.Domain</AssemblyName>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
-
-
 </Project>
