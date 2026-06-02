@@ -9,4 +9,4 @@ services:
       - "80:80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DefaultConnection=Server=db;Database=EmployeeManagement;User Id=sa;Password=your_password;
+      - ConnectionStrings__DefaultConnection=Server=your_server;Database=EmployeeManagement;Trusted_Connection=True;
