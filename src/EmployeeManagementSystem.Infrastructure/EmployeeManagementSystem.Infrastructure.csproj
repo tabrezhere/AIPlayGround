@@ -1,21 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>EmployeeManagementSystem.Infrastructure</RootNamespace>
-    <AssemblyName>EmployeeManagementSystem.Infrastructure</AssemblyName>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\EmployeeManagementSystem.Application\EmployeeManagementSystem.Application.csproj" />
     <ProjectReference Include="..\EmployeeManagementSystem.Domain\EmployeeManagementSystem.Domain.csproj" />
   </ItemGroup>
 
+  <!-- Added by scaffolder: missing project references -->
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0" />
+    <ProjectReference Include="..\EmployeeManagementSystem.Application\EmployeeManagementSystem.Application.csproj" />
   </ItemGroup>
 </Project>
