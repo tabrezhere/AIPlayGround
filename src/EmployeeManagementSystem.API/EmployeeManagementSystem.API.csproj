@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EmployeeManagementSystem.Application\EmployeeManagementSystem.Application.csproj" />
+    <ProjectReference Include="..\EmployeeManagementSystem.Domain\EmployeeManagementSystem.Domain.csproj" />
+    <ProjectReference Include="..\EmployeeManagementSystem.Infrastructure\EmployeeManagementSystem.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <!-- Added by scaffolder: JWT / Configuration packages required by service files in this layer -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.3.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.8.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.3.0" />
+  </ItemGroup>
+</Project>
