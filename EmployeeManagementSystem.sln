@@ -1,0 +1,28 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31913.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementSystem.API", "src/EmployeeManagementSystem.API/EmployeeManagementSystem.API.csproj", "{E1A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementSystem.Application", "src/EmployeeManagementSystem.Application/EmployeeManagementSystem.Application.csproj", "{C1A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementSystem.Domain", "src/EmployeeManagementSystem.Domain/EmployeeManagementSystem.Domain.csproj", "{D1A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementSystem.Infrastructure", "src/EmployeeManagementSystem.Infrastructure/EmployeeManagementSystem.Infrastructure.csproj", "{E2A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+EndGlobal
