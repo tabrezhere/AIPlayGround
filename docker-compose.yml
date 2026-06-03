@@ -8,13 +8,18 @@ services:
     ports:
       - "80:80"
     environment:
-      - ConnectionStrings__DefaultConnection=Server=db;Database=EmployeeManagement;User Id=sa;Password=Your_password123;
-      - Jwt__Key=YourSuperSecretKey
-      - Jwt__Issuer=EmployeeManagementSystem
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=db;Database=EmployeeManagement;User Id=sa;Password=your_password;
+      - Jwt__Key=your_secret_key
+      - Jwt__Issuer=your_issuer
+      - Jwt__Audience=your_audience
+    depends_on:
+      - db
+
   db:
     image: mcr.microsoft.com/mssql/server
     environment:
-      - SA_PASSWORD=Your_password123
+      - SA_PASSWORD=your_password
       - ACCEPT_EULA=Y
     ports:
       - "1433:1433"
