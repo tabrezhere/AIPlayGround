@@ -9,7 +9,7 @@ services:
       - "80:80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DefaultConnection=Server=db;Database=EmployeeManagement;User Id=sa;Password=your_password;
+      - ConnectionStrings__DefaultConnection=Server=db;Database=EmployeeManagement;User Id=sa;Password=12345;
       - Jwt__Key=your_secret_key
       - Jwt__Issuer=your_issuer
       - Jwt__Audience=your_audience
@@ -19,7 +19,7 @@ services:
   db:
     image: mcr.microsoft.com/mssql/server
     environment:
-      - SA_PASSWORD=your_password
+      - SA_PASSWORD=12345
       - ACCEPT_EULA=Y
     ports:
       - "1433:1433"
