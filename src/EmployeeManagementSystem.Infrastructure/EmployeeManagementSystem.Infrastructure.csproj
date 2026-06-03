@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EmployeeManagementSystem.Domain\EmployeeManagementSystem.Domain.csproj" />
+  </ItemGroup>
+
+  <!-- Added by scaffolder: missing project references -->
+  <ItemGroup>
+    <ProjectReference Include="..\EmployeeManagementSystem.Application\EmployeeManagementSystem.Application.csproj" />
+  </ItemGroup>
+</Project>
