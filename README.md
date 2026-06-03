@@ -6,19 +6,23 @@
 
 ## How to Run Locally
 1. Clone the repository.
-2. Run `docker-compose up` to start the application and database.
-3. Navigate to `http://localhost` to access the API.
+2. Navigate to the project directory.
+3. Run `docker-compose up` to start the application and the database.
 
 ## Environment Variables
-- `ConnectionStrings__DefaultConnection`
-- `Jwt__Key`
-- `Jwt__Issuer`
+- `ConnectionStrings__DefaultConnection`: Connection string for SQL Server.
+- `Jwt__Key`: Secret key for JWT.
+- `Jwt__Issuer`: Issuer for JWT.
+- `Jwt__Audience`: Audience for JWT.
 
 ## API Endpoints
-- `POST /auth/register`
-- `POST /auth/login`
-- `GET /employees/{id}`
-- `GET /departments/{id}`
+- `GET /api/employee`: Get all employees.
+- `GET /api/employee/{id}`: Get employee by ID.
+- `POST /api/employee`: Add a new employee.
+- `PUT /api/employee/{id}`: Update an employee.
+- `DELETE /api/employee/{id}`: Delete an employee.
+- `POST /api/auth/register`: Register a new user.
+- `POST /api/auth/login`: Login and get JWT token.
 
 ## Architecture Overview
-The application follows Clean Architecture principles, separating concerns into Domain, Application, Infrastructure, and API layers.
+This application follows Clean Architecture principles with four layers: Domain, Application, Infrastructure, and API.
