@@ -1,5 +1,4 @@
 using EmployeeManagementSystem.Domain.Entities;
-
 namespace EmployeeManagementSystem.Domain.Interfaces;
 
 public interface IEmployeeRepository
