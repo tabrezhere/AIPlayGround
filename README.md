@@ -19,10 +19,10 @@
 - `GET /api/employee`: Get all employees.
 - `GET /api/employee/{id}`: Get employee by ID.
 - `POST /api/employee`: Add a new employee.
-- `PUT /api/employee/{id}`: Update an employee.
+- `PUT /api/employee`: Update an existing employee.
 - `DELETE /api/employee/{id}`: Delete an employee.
 - `POST /api/auth/register`: Register a new user.
-- `POST /api/auth/login`: Login and get JWT token.
+- `POST /api/auth/login`: Login and receive a JWT.
 
 ## Architecture Overview
-This application follows Clean Architecture principles with four layers: Domain, Application, Infrastructure, and API.
+The application follows a Clean Architecture pattern with four layers: Domain, Application, Infrastructure, and API.
