@@ -1,0 +1,1 @@
+public record EmployeeDto(int Id, string FirstName, string LastName, string Email, int DepartmentId, Role Role);

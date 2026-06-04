@@ -1,0 +1,1 @@
+public record DepartmentDto(int Id, string Name);

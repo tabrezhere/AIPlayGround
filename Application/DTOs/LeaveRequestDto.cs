@@ -1,0 +1,1 @@
+public record LeaveRequestDto(int Id, int EmployeeId, DateTime StartDate, DateTime EndDate, string Reason, bool IsApproved);
