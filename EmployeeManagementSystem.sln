@@ -1,14 +1,14 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.0.31913.202
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementSystem.API", "src/EmployeeManagementSystem.API/EmployeeManagementSystem.API.csproj", "{E1A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementSystem.Domain", "src\EmployeeManagementSystem.Domain\EmployeeManagementSystem.Domain.csproj", "{A84ECEB8-2DD4-4D06-9135-3905D8A175FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementSystem.Application", "src/EmployeeManagementSystem.Application/EmployeeManagementSystem.Application.csproj", "{C1A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementSystem.Application", "src\EmployeeManagementSystem.Application\EmployeeManagementSystem.Application.csproj", "{D191F4A3-7041-48F8-8BC3-FB8FB1D82DC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementSystem.Domain", "src/EmployeeManagementSystem.Domain/EmployeeManagementSystem.Domain.csproj", "{D1A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementSystem.Infrastructure", "src\EmployeeManagementSystem.Infrastructure\EmployeeManagementSystem.Infrastructure.csproj", "{FF556151-09BA-44A2-A646-8923809A0250}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementSystem.Infrastructure", "src/EmployeeManagementSystem.Infrastructure/EmployeeManagementSystem.Infrastructure.csproj", "{E2A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementSystem.API", "src\EmployeeManagementSystem.API\EmployeeManagementSystem.API.csproj", "{81E97F7E-9D31-401E-A6B2-364987496EF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,13 +16,27 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E1A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D1A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D1A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E2A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E2A0B8D6-1C4D-4A3C-8C9F-7D6F1E6B0B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A84ECEB8-2DD4-4D06-9135-3905D8A175FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A84ECEB8-2DD4-4D06-9135-3905D8A175FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A84ECEB8-2DD4-4D06-9135-3905D8A175FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A84ECEB8-2DD4-4D06-9135-3905D8A175FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D191F4A3-7041-48F8-8BC3-FB8FB1D82DC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D191F4A3-7041-48F8-8BC3-FB8FB1D82DC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D191F4A3-7041-48F8-8BC3-FB8FB1D82DC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D191F4A3-7041-48F8-8BC3-FB8FB1D82DC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF556151-09BA-44A2-A646-8923809A0250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF556151-09BA-44A2-A646-8923809A0250}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF556151-09BA-44A2-A646-8923809A0250}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF556151-09BA-44A2-A646-8923809A0250}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81E97F7E-9D31-401E-A6B2-364987496EF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81E97F7E-9D31-401E-A6B2-364987496EF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81E97F7E-9D31-401E-A6B2-364987496EF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81E97F7E-9D31-401E-A6B2-364987496EF0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {05B02F28-BB61-4ECC-AF05-875F058714AC}
 	EndGlobalSection
 EndGlobal
