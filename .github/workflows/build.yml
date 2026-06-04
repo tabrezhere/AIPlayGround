@@ -19,7 +19,7 @@ jobs:
         run: dotnet restore
       - name: Build
         run: dotnet build --configuration Release
+      - name: Run tests
+        run: dotnet test
       - name: Publish
         run: dotnet publish --configuration Release --output ./publish
-      - name: Deploy
-        run: echo 'Deploying...'
