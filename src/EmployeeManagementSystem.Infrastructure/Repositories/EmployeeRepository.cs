@@ -1,14 +1,15 @@
-using EmployeeManagementSystem.Domain.Interfaces;
 using EmployeeManagementSystem.Domain.Entities;
+using EmployeeManagementSystem.Domain.Interfaces;
+using EmployeeManagementSystem.Infrastructure.DbContext;
 using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeManagementSystem.Infrastructure.Repositories;
 
 public class EmployeeRepository : IEmployeeRepository
 {
-    private readonly EmployeeManagementDbContext _context;
+    private readonly EmployeeDbContext _context;
 
-    public EmployeeRepository(EmployeeManagementDbContext context)
+    public EmployeeRepository(EmployeeDbContext context)
     {
         _context = context;
     }
@@ -37,7 +38,7 @@ public class EmployeeRepository : IEmployeeRepository
 
     public async Task DeleteAsync(int id)
     {
-        var employee = await _context.Employees.FindAsync(id);
+        var employee = await GetByIdAsync(id);
         if (employee != null)
         {
             _context.Employees.Remove(employee);
