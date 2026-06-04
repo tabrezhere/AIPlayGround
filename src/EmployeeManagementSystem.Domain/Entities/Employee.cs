@@ -1,7 +1,9 @@
 namespace EmployeeManagementSystem.Domain.Entities;
 
-public class Employee
+public record Employee
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
+    public int Id { get; init; }
+    public string Name { get; init; }
+    public string Position { get; init; }
+    public decimal Salary { get; init; }
 }
